@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #18191a;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1b;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 24px;
+}
+
+.header .search {
+    flex-grow: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.header input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #272729;
+    color: #d7dadc;
+}
+
+.header .links {
+    display: flex;
+    align-items: center;
+}
+
+.header .links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.toggle-wrapper {
+    position: relative;
+    width: 40px;
+    height: 25px;
+    display: inline-block;
+}
+
+#toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-label::after {
+    content: '🌙';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+#toggle-checkbox:checked + .toggle-label {
+    background-color: #ff4500;
+}
+
+#toggle-checkbox:checked + .toggle-label::after {
+    content: '☀️';
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px); 
+    overflow: hidden;
+}
+
+.sidebar, .content, .rightbar {
+    padding: 20px;
+    background-color: #242526;
+    height: calc(100vh - 50px);
+}
+
+.sidebar, .rightbar {
+    width: 20%;
+    position: sticky;
+    top: 50px;
+    overflow-y: auto;
+}
+
+.content {
+    width: 60%;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #3b5998;
+    text-decoration: none;
+}
+
+.sidebar h3 {
+    margin-top: 20px;
+}
+
+.content .post-box, .content .post {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #3a3b3c;
+}
+
+.content .post-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #272729;
+    color: #d7dadc;
+}
+
+.content .post-box .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.content .post-box .buttons .post-btn {
+    background-color: #4267b2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content .post-box .buttons .post-btn:hover {
+    background-color: #365899;
+}
+
+.content .post .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .post .post-user {
+    font-weight: bold;
+}
+
+.content .post .post-time {
+    font-size: 0.9em;
+    color: #b0b3b8;
+}
+
+.content .post .post-content {
+    margin-top: 10px;
+}
+
+.content .post .post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.content .post .post-actions .like-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.content .post .post-actions .like-btn.liked {
+    color: #ff4500;
+}
+
+.content .post .post-actions .action-btn {
+    background-color: #e4e6eb;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content .post .post-actions .action-btn:hover {
+    background-color: #d3d6db;
+}
+
+.content .post .post-footer {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #b0b3b8;
+}
+
+.content .post .post-footer .like-count,
+.content .post .post-footer .view-count {
+    color: white;
+}
+
+
+body.dark-mode {
+    background-color: #18191a;
+    color: #e4e6eb;
+}
+
+body.dark-mode .header {
+    background-color: #242526;
+}
+
+body.dark-mode .container .sidebar,
+body.dark-mode .container .content,
+body.dark-mode .container .rightbar {
+    background-color: #242526;
+    color: #e4e6eb;
+}
+
+body.dark-mode .container .post-box textarea,
+body.dark-mode .container .post-box .buttons .post-btn {
+    background-color: #3a3b3c;
+    color: #e4e6eb;
+    border: none;
+}
+
+body.dark-mode .container .post-box .buttons .post-btn:hover {
+    background-color: #4a4b4d;
+}
+
+body.dark-mode .container .post .post-actions .action-btn {
+    background-color: #ff4500;
+    color: white;
+}
+
+body.dark-mode .container .post .post-actions .action-btn:hover {
+    background-color: #ff5700;
+}
