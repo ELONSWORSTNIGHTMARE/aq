@@ -3,87 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>MemeWave</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <div class="header">
         <div class="logo">MemeWave</div>
-        <input type="text" placeholder="Search" class="search-bar">
-        <nav class="header-icons">
-            <a href="#" class="icon">Home</a>
-            <a href="#" class="icon">Notifications</a>
-            <a href="#" class="icon">Messages</a>
-        </nav>
-    </header>
-    <main class="main-content">
-        <section class="profile-section">
-            <div class="cover-photo">
-                <img src="images/cover-photo.jpg" alt="Cover Photo">
+        <div class="search">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Account</a>
+            <div class="toggle-wrapper">
+                <input type="checkbox" id="toggle-checkbox">
+                <label for="toggle-checkbox" class="toggle-label"></label>
             </div>
-            <div class="profile-details">
-                <img src="images/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
-                <div class="profile-info">
-                    <h1>Anish Bhasin</h1>
-                    <p>Graphic Designer at MemeWave HQ</p>
-                    <p>Studied at University of the Pacific</p>
-                    <p>Lives in San Francisco, California</p>
-                    <p>In a Domestic Partnership</p>
-                </div>
-                <div class="profile-actions">
-                    <button class="btn">Update Info</button>
-                    <button class="btn">Activity Log</button>
-                </div>
-                <div class="profile-stats">
-                    <span>Map 723</span>
-                    <span>Followers 197</span>
-                </div>
-            </div>
-            <nav class="profile-tabs">
-                <button class="tab active">Timeline</button>
-                <button class="tab">About</button>
-                <button class="tab">Friends</button>
-                <button class="tab">Photos</button>
-                <button class="tab">More</button>
-            </nav>
-        </section>
-        <section class="content-section">
-            <div class="status-update">
-                <input type="text" placeholder="What's going on, Anish?" class="status-input">
-                <button class="btn">Post</button>
-            </div>
-            <div class="activity-feed">
-                <div class="activity-item">Anish is listening to A Matter Of... by The Killers on Spotify.</div>
-                <div class="activity-item">Anish is now friends with Meredith Chin and 16 other people.</div>
-                <div class="activity-item">Anish listened to Jesse Jackson Jr. Pleads... on Stitcher Radio.</div>
-            </div>
-        </section>
-        <aside class="sidebar-section">
-            <div class="joined-info">
-                <h3>Joined</h3>
-                <ul>
-                    <li>February 2021: Joined MemeWave</li>
-                    <li>January 2020: Started working at MemeWave HQ</li>
-                    <li>2018: Graduated from University of the Pacific</li>
-                    <li>2015: Moved to San Francisco, California</li>
-                </ul>
-            </div>
-            <div class="sponsored-info">
-                <h3>Sponsored</h3>
-                <div class="sponsored-item">
-                    <a href="#">State Farm® Official Site</a>
-                    <p>You could reduce your 2012 taxes by contributing before April 15th.</p>
-                </div>
-                <div class="sponsored-item">
-                    <a href="#">Glasses.com</a>
-                    <p>Like Glasses.com for the best value on designer frames.</p>
-                </div>
-                <div class="sponsored-item">
-                    <a href="#">Ledbury Shirts</a>
-                    <p>Constructed of the finest Italian fabrics, Ledbury shirts are perfect for any occasion.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">News Feed</a></li>
+                <li><a href="#">Messages ✉️</a></li>
+                <li><a href="#">Friends 👥</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">App Requests</a></li>
+                <li><a href="#">Game Requests</a></li>
+            </ul>
+            <h3>Friends on Chat</h3>
+        </div>
+        <div class="content">
+            <div class="post-box">
+                <textarea placeholder="What's on your mind?"></textarea>
+                <div class="buttons">
+                    <button class="post-btn">Post</button>
                 </div>
             </div>
-        </aside>
-    </main>
+            <div class="post" data-time="2024-07-20T10:00:00Z">
+                <div class="post-header">
+                    <div class="post-user">Paul McDonald</div>
+                    <div class="post-time">Just now</div>
+                </div>
+                <div class="post-content">Great trivia question, Hova</div>
+                <div class="post-actions">
+                    <button onclick="increaseLike(this)" class="like-btn">👍</button>
+                    <button onclick="increaseView(this)" class="action-btn">Comment</button>
+                    <button onclick="increaseView(this)" class="action-btn">Share</button>
+                </div>
+                <div class="post-footer">
+                    Likes: <span class="like-count">0</span>
+                    Views: <span class="view-count">1</span>
+                </div>
+            </div>
+        </div>
+        <div class="rightbar">
+            <h3>Upcoming Events</h3>
+            <h3>Sponsored</h3>
+            <h3>Pokes</h3>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
